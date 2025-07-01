@@ -1,48 +1,49 @@
 import React from "react";
 import Header from "../Header/Header.jsx";
-import { FiSearch } from "react-icons/fi";
 import SearchBar from "../Search/SearchBar.jsx";
+import ColorPickerBubble from "./ColorPickerBubble.jsx";
 function Hero() {
   return (
-    <section
-      className="relative min-h-screen w-full bg-cover bg-center text-white overflow-x-hidden"
-      style={{ backgroundImage: "url('/Hero.svg')" }}
-    >
-   
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white/15 z-0"></div>
+<section
+  className="relative min-h-screen w-full bg-no-repeat bg-[center_bottom_20%] text-white overflow-hidden"
+  style={{
+    backgroundImage: "url('/Hero.svg')",
+    backgroundSize: "cover", // ← This fills the width fully
+    backgroundPosition: "center bottom 20%", // ← Adjust what portion shows
+  }}
+>
 
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white/15 z-0" />
+
+      {/* Header */}
       <div className="relative z-10">
         <Header />
       </div>
 
-      
-      <div className="absolute z-20 w-full h-full pointer-events-none">
- 
+      {/* Bubble Icons */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
         <img
-          src="../../../public/IconBubble.svg"
-          alt="bubble"
-          className="absolute bottom-[20%] left-[7%] w-10 h-10"
+          src="/IconBubble.svg"
+          alt="Bubble"
+          className="absolute left-[8%] bottom-[36%] w-8 h-8"
         />
-
-   
         <img
-          src="../../../public/IconBubble.svg"
-          alt="bubble"
-          className="absolute top-[74%] left-[20%] w-10 h-10"
+          src="/IconBubble.svg"
+          alt="Bubble"
+          className="absolute left-[18%] bottom-[34%] w-12 h-24 "
         />
-
-
         <img
-          src="../../../public/IconBubble.svg"
-          alt="bubble"
-          className="absolute bottom-[6%] right-[0%] w-10 h-10"
+          src="/IconBubble.svg"
+          alt="Bubble"
+          className="absolute right-[2%] bottom-[20%] w-8 h-8"
         />
       </div>
 
-    
-      <div className="relative z-10 w-full pt-20 md:pt-40 px-6 text-center">
-        <div className="w-full max-w-[1400px] mx-auto">
-          <h1 className="text-[90px] leading-[104px] tracking-[-0.01em] font-bold text-white text-center max-w-[1200px] w-full mx-auto">
+      {/* Hero Content */}
+      <div className="relative z-20 w-full pt-20 md:pt-36 px-6 text-center">
+        <div className="max-w-[1400px] mx-auto">
+          <h1 className="text-[72px] md:text-[90px] leading-[1.2] font-bold tracking-[-0.01em] text-white max-w-[1200px] mx-auto">
             Make Your Interior More <br /> Minimalistic & Modern
           </h1>
 
@@ -51,8 +52,8 @@ function Hero() {
             and modern with ease and speed.
           </p>
 
-       
-         <SearchBar></SearchBar>
+          <SearchBar />
+        <ColorPickerBubble></ColorPickerBubble>
         </div>
       </div>
     </section>
