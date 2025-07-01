@@ -1,8 +1,7 @@
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { BsBagFill } from "react-icons/bs";
-import { createContext } from 'react';
+import { useContext } from 'react';
 import CheckOutBag from "../Cart/Checkoutbag.jsx";
-
 function Header() {
     return (
         <header className="absolute top-2 left-0 w-full px-28 py-5 z-[1000] bg-transparent text-white flex items-center justify-between">
