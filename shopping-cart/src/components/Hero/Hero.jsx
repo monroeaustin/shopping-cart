@@ -14,7 +14,7 @@ function Hero() {
 >
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white/15 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-white/30 z-0" />
 
       {/* Header */}
       <div className="relative z-10">
