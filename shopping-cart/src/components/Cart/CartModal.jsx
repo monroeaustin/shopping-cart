@@ -3,6 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import RemoveCartButton from "../buttons/RemoveCartButton";
 import AddCartButton from "../buttons/AddCartButton";
 
+
 function CartModal({ isOpen, onClose }) {
   const { cart } = useContext(CartContext);
 
