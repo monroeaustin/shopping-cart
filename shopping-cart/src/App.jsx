@@ -1,12 +1,13 @@
 import './App.css'
 import HomePage from './pages/Home/Home.jsx'
-function App() {
+import { InventoryProvider } from './context/InventoryContext.jsx';
 
+function App() {
   return (
-    <>
-     <HomePage></HomePage>
-    </>
-  )
+    <InventoryProvider>
+      <HomePage />
+    </InventoryProvider>
+  );
 }
 
-export default App
+export default App;
