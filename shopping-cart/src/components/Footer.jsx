@@ -50,7 +50,7 @@ function Footer() {
       <div className="border-t border-gray-200 mt-6 py-6 text-center text-sm text-gray-500 flex justify-center gap-8">
         <a href="#">Terms & Conditions</a>
         <a href="#">Privacy Policy</a>
-        <span>Created by Monroe Ramon Austin; Inspired via <a href="https://www.figma.com/design/UwnEhV3RrXZZmuKJ1uXaAZ/Panto---Furniture-Landing-Page-Design--Community-?node-id=1-2&t=jC9N5xXr522HclSS-0">Figma Layout</a></span>
+        <span>Created by <b>Monroe Ramon Austin; Inspired via </b> <a href="https://www.figma.com/design/UwnEhV3RrXZZmuKJ1uXaAZ/Panto---Furniture-Landing-Page-Design--Community-?node-id=1-2&t=jC9N5xXr522HclSS-0"> <i>Figma Layout</i></a></span>
       </div>
     </footer>
   );
