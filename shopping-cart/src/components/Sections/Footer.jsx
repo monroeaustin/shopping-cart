@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import AcceptedCards from "./AcceptedCards";
 
 function Footer() {
   return (
@@ -44,6 +45,9 @@ function Footer() {
             <li className="flex items-center gap-2"><FaInstagram /> Instagram</li>
           </ul>
         </div>
+          <div className="text-2xl text-neutral-700 hover:text-black transition-all">
+      <AcceptedCards/>
+      </div>
       </div>
 
       {/* Bottom Row */}
@@ -52,6 +56,8 @@ function Footer() {
         <a href="#">Privacy Policy</a>
         <span>Created by <b>Monroe Ramon Austin; Inspired via </b> <a href="https://www.figma.com/design/UwnEhV3RrXZZmuKJ1uXaAZ/Panto---Furniture-Landing-Page-Design--Community-?node-id=1-2&t=jC9N5xXr522HclSS-0"> <i>Figma Layout</i></a></span>
       </div>
+
+  
     </footer>
   );
 }
