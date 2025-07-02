@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <>
-      <header className="absolute top-2 left-0 w-full px-28 py-5 z-50 bg-transparent text-white flex items-center justify-between">
+      <header className="fixed top-0 left-0 w-full px-18 py-5 z-[100] bg-black/15 backdrop-blur-md text-white flex items-center justify-between shadow-md">
         <div className="text-2xl font-bold cursor-pointer">Panto</div>
 
         <nav>
