@@ -8,7 +8,9 @@ function CartModal({ isOpen, onClose }) {
     <>
       <div
         onClick={onClose}
-        className={`fixed inset-0 bg-black bg-opacity-50 z-[900] transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-transparent bg-opacity-20 z-[900] transition-opacity duration-300 backdrop-blur-sm
+
+ ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       />
@@ -32,7 +34,7 @@ function CartModal({ isOpen, onClose }) {
             ) : (
               cart.map((item, i) => (
                 <li key={i} className="text-sm text-gray-700">
-                  {item}
+                  {item.name}
                 </li>
               ))
             )}

@@ -1,13 +1,8 @@
-import './App.css'
-import HomePage from './pages/Home/Home.jsx'
-import { InventoryProvider } from './context/InventoryContext.jsx';
+import './App.css';
+import HomePage from './pages/Home/Home.jsx';
 
 function App() {
-  return (
-    <InventoryProvider>
-      <HomePage />
-    </InventoryProvider>
-  );
+  return <HomePage />;
 }
 
 export default App;

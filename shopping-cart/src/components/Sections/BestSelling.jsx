@@ -54,6 +54,7 @@ function BestSelling() {
                 title={product.name}
                 price={product.price}
                 reviews={product.reviews || 5}
+                sku={product.sku}
               />
             ))
           )}

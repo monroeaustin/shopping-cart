@@ -1,7 +1,6 @@
-import React from "react";
-import { MdAdd } from "react-icons/md";
+import AddCartButton from "../buttons/AddCartButton"; 
 
-function ProductCard({ img, category, title, reviews, price }) {
+function ProductCard({ img, category, title, reviews, price,sku }) {
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all w-[250px] flex flex-col">
       {/* Image */}
@@ -30,9 +29,7 @@ function ProductCard({ img, category, title, reviews, price }) {
         {/* Footer */}
         <div className="flex items-center justify-between mt-auto pt-2">
           <p className="text-lg font-semibold">${price}</p>
-          <button className="w-8 h-8 flex items-center justify-center bg-[#0F1B4C] text-white rounded-full">
-            <MdAdd size={20} />
-          </button>
+          <AddCartButton sku={sku} />
         </div>
       </div>
     </div>
