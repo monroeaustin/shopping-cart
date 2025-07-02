@@ -1,32 +1,27 @@
-import { IoRemoveCircle } from "react-icons/io5";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { InventoryContext } from "../../context/InventoryContext";
-import CheckInventory from "../Cart/utilties/CheckInventory.js";
 
-function RemoveCartButton({ sku, quantity }) {
+function RemoveCartButton({ sku }) {
   const { setCart, cart } = useContext(CartContext);
-  const { inventory } = useContext(InventoryContext);
 
-  const removeFromCart = (quantity, sku) => {
-    let count = 0;
-    const updatedCart = cart.filter(item => {
-      if (item.sku === sku && count < quantity) {
-        count++;
-        return false;
-      }
-      return true;
+  const removeFromCart = (sku) => {
+    setCart(prevCart => {
+      return prevCart
+        .map(item =>
+          item.sku === sku
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter(item => item.quantity > 0);
     });
-
-    setCart(updatedCart);
   };
 
   return (
     <button
-      onClick={() => removeFromCart(quantity, sku)}
-      className="w-8 h-8 flex items-center justify-center bg-[#0F1B4C] text-white rounded-full cursor-pointer"
+      onClick={() => removeFromCart(sku)}
+      className="w-6 h-6 border border-gray-300 rounded text-gray-600 text-sm font-bold hover:bg-gray-100"
     >
-      <IoRemoveCircle size={20} />
+      –
     </button>
   );
 }

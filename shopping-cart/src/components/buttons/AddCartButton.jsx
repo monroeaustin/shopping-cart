@@ -1,29 +1,37 @@
-import { MdAdd } from "react-icons/md";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { InventoryContext } from "../../context/InventoryContext";
 import CheckInventory from "../Cart/utilties/CheckInventory.js";
 
-function AddCartButton({ sku, quantity }) {
+function AddCartButton({ sku, quantity = 1 }) {
   const { setCart, cart } = useContext(CartContext);
   const { inventory } = useContext(InventoryContext);
 
-const addToCart = (quantity,sku) => {
-  const matchedItem = CheckInventory(sku, inventory);
-  if (matchedItem) {
-    for (let i = 0; i < quantity; i++) {
-      setCart((prev) => [...prev, matchedItem]);
-    }
-  }
-};
+  const addToCart = (sku, quantity) => {
+    const matchedItem = CheckInventory(sku, inventory);
+    if (!matchedItem) return;
+
+    setCart(prevCart => {
+      const existingItem = prevCart.find(item => item.sku === sku);
+      if (existingItem) {
+        return prevCart.map(item =>
+          item.sku === sku
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      } else {
+        return [...prevCart, { ...matchedItem, quantity }];
+      }
+    });
+  };
+
   return (
     <button
-     onClick={() => addToCart(quantity, sku)}
-      className="w-8 h-8 flex items-center justify-center bg-[#0F1B4C] text-white rounded-full cursor-pointer"
+      onClick={() => addToCart(sku, quantity)}
+      className="w-6 h-6 border border-gray-300 rounded text-gray-600 text-sm font-bold hover:bg-gray-100"
     >
-      <MdAdd size={20} />
+      +
     </button>
   );
 }
-
 export default AddCartButton;

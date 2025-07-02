@@ -1,18 +1,18 @@
 import AddCartButton from "../buttons/AddCartButton";
+import RemoveCartButton from "../buttons/RemoveCartButton";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
-import RemoveCartButton from "../buttons/RemoveCartButton";
+
 function ProductCard({ img, category, title, reviews, price, sku }) {
-  const { cart, setCart } = useContext(CartContext);
-  const [quantity, setQuantity] = useState(1);
+  const { cart } = useContext(CartContext);
+  const [inputQty, setInputQty] = useState(1);
 
-  const handleRemove = () => {
-    setCart(prev => prev.filter(item => item.sku !== sku));
-  };
+  const itemInCart = cart.find(item => item.sku === sku);
+  const cartQuantity = itemInCart ? itemInCart.quantity : 0;
 
-  const handleQuantityChange = (e) => {
+  const handleInputChange = (e) => {
     const val = parseInt(e.target.value);
-    if (val >= 1) setQuantity(val);
+    if (val >= 1) setInputQty(val);
   };
 
   return (
@@ -39,19 +39,21 @@ function ProductCard({ img, category, title, reviews, price, sku }) {
           <p className="text-lg font-semibold mb-2">${price}</p>
 
           <div className="flex items-center justify-between gap-2">
-            {/* Quantity input */}
+            {/* Remove button */}
+            <RemoveCartButton sku={sku} />
+
+            {/* Quantity input (shows current quantity from cart) */}
             <input
               type="number"
               min={1}
-              value={quantity}
-              onChange={handleQuantityChange}
+              value={cartQuantity || inputQty}
+              onChange={handleInputChange}
               className="w-12 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
 
-            {/* Add button */}
-            <AddCartButton sku={sku} quantity={quantity} />
+            {/* Add button (adds the `inputQty` amount) */}
+            <AddCartButton sku={sku} quantity={inputQty} />
 
-            <RemoveCartButton sku={sku} quantity={quantity} />
           </div>
         </div>
       </div>
