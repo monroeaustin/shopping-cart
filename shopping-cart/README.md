@@ -3,6 +3,8 @@
 A sleek shopping cart web app built with **React**, **Vite**, and **TailwindCSS**, inspired by a Figma UI and powered by a custom REST API. Built as part of [The Odin Project](https://www.theodinproject.com/) React curriculum.
 
 🔗 **Live Demo**: [View Deployed App](https://shopping-cart-qu53.vercel.app/)
+![image](https://github.com/user-attachments/assets/36044fa9-993b-4842-9c9a-2e4b586cd752)
+![image](https://github.com/user-attachments/assets/b2c5da02-913c-4241-a29b-e544da2279c2)
 
 ---
 
@@ -31,6 +33,7 @@ Example Endpoint:
 `GET https://furniture-api.fly.dev/v1/products?category=chair&wood_type=oak&max_price=500&sort=price_asc`
 
 ---
+![image](https://github.com/user-attachments/assets/99e9e120-a6fd-43f4-8243-67694ddd2770)
 
 ## 🖼️ UI Inspiration
 
